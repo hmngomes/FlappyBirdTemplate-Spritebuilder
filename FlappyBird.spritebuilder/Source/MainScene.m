@@ -18,9 +18,15 @@
 @property (nonatomic,readwrite) CGPoint ratio;
 @property (nonatomic,readwrite) CGPoint offset;
 +(id) pointwhithCGPoint:(CGPoint)point offset:(CGPoint)offset;
-
+-(id) initwhithCGPoint:(CGPoint)point offset:(CGPoint)offset;
 @end
+
 @implementation MainScene {
+    CGPoint _cloudParallaxRatio;
+    CGPoint _bushParallaxRatio;
+    
+    CCNode *_parallaxContainer;
+    CCParallaxNode *_parallaxBackground;
     CCNode *_ground1;
     CCNode *_ground2;
     NSArray *_grounds;
