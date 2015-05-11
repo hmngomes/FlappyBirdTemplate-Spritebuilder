@@ -9,6 +9,17 @@
 #import "MainScene.h"
 #import "Obstacle.h"
 
+@interface CGPointObject : NSObject {
+    CGPoint _ratio;
+    CGPoint _offset;
+    CCNode *__unsafe_unretained _child; // weak ref
+    
+};
+@property (nonatomic,readwrite) CGPoint ratio;
+@property (nonatomic,readwrite) CGPoint offset;
++(id) pointwhithCGPoint:(CGPoint)point offset:(CGPoint)offset;
+
+@end
 @implementation MainScene {
     CCNode *_ground1;
     CCNode *_ground2;
@@ -36,7 +47,7 @@
 }
 
 
-- (void)didLoadFromCCB {
+- (void)didLoadFromCCB; {
     self.userInteractionEnabled = TRUE;
     
     _grounds = @[_ground1, _ground2];
