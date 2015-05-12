@@ -71,6 +71,7 @@
     for (CCNode *_bush in _bushes) {
         CGPoint offset =_bush.position;
         [self removeChild:_bush];
+        [_parallaxBackground addChild:_bush z:0 _parallaxRattio:_bushParallaxRatio positionOffset:offset]
     }
     
     for (CCNode *ground in _grounds) {
